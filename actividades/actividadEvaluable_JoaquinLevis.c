@@ -25,13 +25,14 @@ void insertar(int arr[], int *t){
     while((pos < *t) && (n >= arr[pos])) {
         pos++;
     }
-    
+    printf("%d", *t);
     for(int i = *t-1; i >= pos; i--) {
         arr[i + 1] = arr[i];
     }
-    
+    printf("%d", *t);
     arr[pos] = n;
     (*t)++;
+    printf("%d", *t);
 }
 
 
