@@ -7,7 +7,7 @@ typedef struct Tdoblete{
     struct Tdoblete *next;
 }Tnodo;
 
-Tnodo *q, *r, *s, *t;
+Tnodo *q, *r, *s, *t, *p;
 
 int main(){
     q = (Tnodo*)malloc(sizeof(Tnodo));
@@ -26,6 +26,19 @@ int main(){
     (*r).next = q;
     q = r;
     
+
+    r = q;
+    r = (*r).next;
+    t = (*r).next;
+    s = (Tnodo*)malloc(sizeof(Tnodo));
+    (*s).info = 3;
+    (*s).next = (*r).next;
+    (*r).next = s;
+    p = t;
+    (*t).info = 29;
+    r = q;
+
+
     while (r != NULL)
     {
         printf("%d ", (*r).info);
