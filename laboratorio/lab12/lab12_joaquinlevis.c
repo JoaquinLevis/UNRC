@@ -100,33 +100,30 @@ void mostrar (telem *list){
     }
 }
 
-void muestraRegistro (telem *list, int pos){
-    telem *aux;
-    int cont;
 
-    if (pos < 1){
-        printf("lista vacia");
-    } else if((*list).next = NULL){
-        printf("posicion incorrecta");
+
+void muestraRegistro(telem *list, int pos){
+    int cont;
+    if(pos < 1){
+        printf("Posicion incorrecta \n");
+    } else if((*list).next==NULL){
+        printf("Lista vacia \n");
     } else{
-        aux = (*list).next;
         cont = 0;
-        printf("%d", cont);
-        if (aux == NULL){
-            printf("error");
-        }
-        while (aux != NULL && !(cont == pos)){
+        while(list != NULL && !(cont == pos)){
             cont++;
-            aux = (*aux).next;
-            printf("%d", cont);
+            list = (*list).next;
         }
-        if (aux != NULL){
-            printf("EL nombre es: %s\n", (*aux).info.nombre);
-            printf("El apellido es: %s\n",(*aux).info.apellido);
-            printf("El telefono es: %s\n",(*aux).info.telefono);
-            printf("El domicilio es: %s\n",(*aux).info.calleDomicilio);
-            printf("El apellido es: %d\n",(*aux).info.edad);
-            printf("El sexo es: %s\n\n",(*aux).info.sexo);
+        if (list == NULL){
+            printf("la madre q lo pario");
+        }
+        if(list!=NULL){
+            printf("Nombre: %s \n", list->info.nombre);
+            printf("Apellido: %s \n", list->info.apellido);
+            printf("Telefono: %s \n", list->info.telefono);
+            printf("Direccion: %s \n", list->info.calleDomicilio);
+            printf("Genero: %s \n", list->info.sexo);
+            printf("Edad: %d \n", list->info.edad);
         }
     }
 }
@@ -174,7 +171,7 @@ void liberarMemoria (telem **list){
 
 int main(){
 
-    q = (telem*)malloc(sizeof(telem));
+    inicializar(&q);
     do{
         printf("\n-----------------------------------------------------------\n");
         strcpy(mensaje, "ingresa un opcion\n");
