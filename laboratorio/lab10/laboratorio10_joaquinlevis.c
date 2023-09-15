@@ -66,13 +66,12 @@ void listar(Telem *list){
 }
 
 
-int main(){
 
+int main(){
+    crear(&q);
     strcpy(nuevaPers.nom, "Fabian");
     strcpy(nuevaPers.ape, "Levis");
     nuevaPers.edad = 50;
-
-    crear(&q);
     insertarCab(&q,nuevaPers);
     strcpy(nuevaPers.nom, "Claudia");
     strcpy(nuevaPers.ape, "Gariboldi");
