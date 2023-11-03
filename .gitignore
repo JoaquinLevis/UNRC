@@ -1,3 +1,7 @@
 # Ignorar archivos ejecutables
 *.exe
 *.out
+*.txt
+*.exe
+*.dll
+a.out
