@@ -98,4 +98,4 @@ raicesReales :: Int -> Int -> Int -> Int
 raicesReales a b c | b^2 - 4 * a * c == 0 = 1
                    | b^2 - 4 * a * c < 0 = 0
                    |otherwise = 2
-                   
+
