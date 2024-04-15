@@ -37,3 +37,26 @@ distH (x:xs) (y:ys) | x == y = 1
 --7
 cuadperf :: Int -> Bool
 cuadperf n = [x | x <- [0..n], x^2 == n] /= []
+
+--8 
+repetidos :: a -> Int -> [a]
+repetidos z 0 = []
+repetidos z n = z : repetidos z (n-1)
+
+--9
+nelem :: [a] -> Int -> a
+nelem [] n = error "indice fuera de rango"
+nelem (x:xs) 0 = x
+nelem (x:xs) n = nelem xs (n-1) 
+
+--10
+posicionesC :: String -> Char -> [Int]
+posicionesC xs c = [x | x <-[0..(length xs - 1)], nelem xs x == c]
+
+--11
+compact :: Eq a => [a] -> [a]
+compact [] = []
+compact (x:[]) = [x]
+compact (y:x:xs) |y /= x = y : compact (x:xs)
+                 |otherwise = compact (x:xs)
+    
