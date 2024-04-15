@@ -3,16 +3,16 @@ factorial :: Int -> Int
 factorial 0 = 1
 factorial n = n * factorial (n-1)
 
--- --2 
--- factorial_1 :: Int -> [Int]
--- factorial_1 n = reverse (aux n)
---     where aux 0 = [1]
---         aux n = factorial n : aux (n-1)
+--2 
+factorial_1 :: Int -> [Int]
+factorial_1 n = reverse (aux n)
+    where aux 0 = [1]
+            aux n = factorial n : aux (n-1)
 
 --3 acumuladores
 factoriales_2 :: Int -> [Int]
-factoriales_2 n = reverse(aux(n+1) 0 [1])
-                where aux n m (x:xs) = if n==m then [1] else x : aux (n+1) (m+1) ((x*(n-m) : x : xs)
+factoriales_2 n = reverse(aux(n+1) 0 [1]) 
+    where aux n m (x:xs) = if n == m then [] else aux n (m+1) ([x*(m+1)]) ++ (x:xs)
 
 --4 lista de compresion
 factorial_3 :: Int -> [Int]

@@ -60,3 +60,4 @@ compact (x:[]) = [x]
 compact (y:x:xs) |y /= x = y : compact (x:xs)
                  |otherwise = compact (x:xs)
     
+
