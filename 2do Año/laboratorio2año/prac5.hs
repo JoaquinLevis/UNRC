@@ -22,6 +22,10 @@ sucesores xs = map (+1) xs
 sumList :: [Int] -> Int
 sumList xs = foldl (\acc x -> acc + x) 0 xs
 
+sumList1 :: [Int] -> Int
+sumList1 xs = foldl (+) 0 xs
+
+
 --11
 factFold :: Int -> Int
 factFold n = foldr (*) 1 [1..n]
@@ -71,6 +75,11 @@ ocurrencias ys x = length [y | y <- ys, y == x]
 split2 :: [a] -> [([a], [a])]
 split2 [] = [([], [])] 
 split2 (x:xs) = ([], x:xs) : [(x:ls, rs) | (ls, rs) <- split2 xs]
+
+split2' :: [a] -> [([a], [a])] --con take y drop
+split2' [] = [([], [])]
+split2' xs = [(take n xs, drop n xs) | n <- [0..length xs]]
+
 
 --23
 sumaSeg :: [Int] -> Int
