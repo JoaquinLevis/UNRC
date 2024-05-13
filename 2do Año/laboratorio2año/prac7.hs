@@ -33,3 +33,5 @@ contatoria :: (a -> Bool) -> [a] -> Int
 contatoria condicion xs = length [x | x <- xs, condicion x]
 
 
+
+
