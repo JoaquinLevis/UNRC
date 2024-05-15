@@ -28,3 +28,10 @@ subList xs = [take n (drop k xs) | k <- [0..length xs], n <- [0..length xs - k]]
 
 maxSumSeg :: [Int] -> Int
 maxSumSeg xs = maximum [sum (subList xs!!i) | i <- [0..length(subList xs)-1]]
+
+--4b)
+iguales :: [Int] -> Bool
+iguales xs = and [xs!!i == xs!!0 | i <- [1..length xs - 1]]
+
+ssi :: [Int] -> Int
+ssi xs = maximum [length(take n (drop k xs)) | k <- [0..length xs - 1], n <- [0..length xs - k], iguales (take n (drop k xs))]
